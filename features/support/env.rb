@@ -4,9 +4,10 @@ require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'capybara-screenshot/cucumber'
 
-#PTravel Settings
-ENV['USER']="Pepazo"
-ENV['PSW']="ILoveQA"
+#DigitAll Settings
+ENV['URL']="http://3.14.118.36:8080/dallex/login"
+ENV['USER']="admin"
+ENV['PSW']="admin1234."
 
 
 Capybara.default_driver = :selenium
@@ -15,7 +16,7 @@ Capybara.default_driver = :selenium
 Capybara.app_host = ENV["CAPYBARA_HOST"]
 
 # Set the time (in seconds) Capybara should wait for elements to appear on the page
-Capybara.default_max_wait_time = 15
+Capybara.default_max_wait_time = 30
 Capybara.default_driver = :selenium
 Capybara.app_host = "http://www.google.com"
 
@@ -30,8 +31,8 @@ class CapybaraDriverRegistrar
 end
 # Register various Selenium drivers
 #CapybaraDriverRegistrar.register_selenium_driver(:internet_explorer)
-CapybaraDriverRegistrar.register_selenium_driver(:firefox)
-#CapybaraDriverRegistrar.register_selenium_driver(:chrome)
+#CapybaraDriverRegistrar.register_selenium_driver(:firefox)
+CapybaraDriverRegistrar.register_selenium_driver(:chrome)
 Capybara.run_server = false
 #World(Capybara)
 
